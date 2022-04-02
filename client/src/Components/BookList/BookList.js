@@ -13,7 +13,6 @@ const getBooksQuery = gql`
 const BookList = (props) => {
     const displayBooks = () => {
         let books = props.loading ? null : props.data.books;
-        console.log(books);
         if (books) {
             return books.map(book => {
                 return (
