@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { graphql } from 'react-apollo';
 import { flowRight as compose } from 'lodash';
 import {getAuthorsQuery, addBookMutation, getBooksQuery} from "../../Queries/queries";
+import styles from './AddBook.module.css';
 
 const AddBook = (props) => {
     let [name, setName] = useState('');
@@ -33,18 +34,18 @@ const AddBook = (props) => {
         });
     }
     return (
-        <form id={'add-book'} onSubmit={submitForm.bind(this)}>
-            <div className={'field'}>
+        <form className={styles.AddBook} onSubmit={submitForm.bind(this)}>
+            <div className={styles.field}>
                 <label>Book Name:</label>
                 <input type={'text'}
                        onChange={(e) => setName(e.target.value)}/>
             </div>
-            <div className={'field'}>
+            <div className={styles.field}>
                 <label>Genre:</label>
                 <input type={'text'}
                        onChange={(e) => setGenre(e.target.value)}/>
             </div>
-            <div className={'field'}>
+            <div className={styles.field}>
                 <label>Author:</label>
                 <select
                     onChange={(e) => setAuthorId(e.target.value)}>

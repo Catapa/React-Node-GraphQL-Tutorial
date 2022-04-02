@@ -2,6 +2,8 @@ import React from 'react';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
+import styles from './App.module.css';
+
 //components
 import BookList from "./Components/BookList/BookList";
 import AddBook from "./Components/AddBook/AddBook";
@@ -14,7 +16,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-        <div>
+        <div className={styles.main}>
             <h1>Alo</h1>
             <BookList/>
             <AddBook/>

@@ -2,6 +2,8 @@ import React from 'react';
 import {graphql} from 'react-apollo';
 import {getBookQuery} from "../../Queries/queries";
 
+import styles from './BookDetails.module.css';
+
 const BookDetails = (props) => {
 
     const displayBookDetails = () => {
@@ -24,7 +26,7 @@ const BookDetails = (props) => {
 
     // console.log(props.bookId);
     return (
-        <div id={'book-details'}>
+        <div className={styles.BookDetails}>
             {displayBookDetails()}
         </div>
     )
